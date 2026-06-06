@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover GameWorm - The ultimate client-side digital video game storefront. Browse F2P titles, search categories, and find your next digital obsession.">
+    <title>GameWorm | Your Next Digital Obsession</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Global Navigation Header -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo-link" id="nav-logo">
+                <i class="fa-solid fa-worm logo-worm"></i> GAMEWORM
+            </a>
+            <nav class="site-nav" id="main-nav">
+                <a href="index.html" class="nav-link active" id="link-home">Home</a>
+                <a href="game-details.html?id=540" class="nav-link" id="link-details">Featured</a>
+                <a href="perks.html" class="nav-link" id="link-perks">Perks</a>
+                <a href="about.html" class="nav-link" id="link-about">About</a>
+                <a href="contact.html" class="nav-link" id="link-contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-banner" id="home-hero">
+        <div class="container">
+            <div class="hero-layout">
+                <div class="hero-tag">Active Portal v2.04</div>
+                <h1 class="hero-title">Your Next <br><span>Digital Obsession</span></h1>
+                <p class="hero-desc">
+                    Streamlined, high-performance client-side catalog delivering direct access to the world's most immersive free-to-play universes. No logins, no friction, pure gaming.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toolbar Filters -->
+    <div class="toolbar" id="catalog-toolbar">
+        <div class="container">
+            <div class="toolbar-layout">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-bar" class="search-input" placeholder="Search catalog by title..." aria-label="Search games">
+                </div>
+                <div class="filter-group">
+                    <select id="genre-filter" class="filter-select" aria-label="Filter by genre">
+                        <option value="all">All Genres</option>
+                        <option value="Shooter">Shooter</option>
+                        <option value="MMORPG">MMORPG</option>
+                        <option value="ARPG">ARPG / Action RPG</option>
+                        <option value="Strategy">Strategy</option>
+                        <option value="Fighting">Fighting</option>
+                        <option value="Sports">Sports</option>
+                    </select>
+                    <select id="platform-filter" class="filter-select" aria-label="Filter by platform">
+                        <option value="all">All Platforms</option>
+                        <option value="pc">PC (Windows)</option>
+                        <option value="browser">Web Browser</option>
+                    </select>
+                    <select id="sort-filter" class="filter-select" aria-label="Sort games">
+                        <option value="relevance">Sort: Relevance</option>
+                        <option value="alphabetical">Sort: Alphabetical</option>
+                        <option value="release-date">Sort: Release Date</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Catalog Section -->
+    <section class="catalog-section">
+        <div class="container">
+            <!-- Dynamic Catalog Grid Target -->
+            <main id="game-catalog-container" class="grid-container">
+                <!-- Loader while executing API pipeline -->
+                <div class="loader-container" id="catalog-loader">
+                    <div class="loader"></div>
+                    <p class="text-muted">Interacting with F2P Database...</p>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer-logo">
+                <i class="fa-solid fa-worm logo-worm"></i> GAMEWORM
+            </div>
+            <div class="site-footer-links">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="perks.html" class="footer-link">Perks</a>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+            <p>&copy; 2026 GameWorm Corp. Thin-line neo-brutalist gaming layouts. Powered by FreeToGame.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic Module -->
+    <script type="module" src="js/catalog.js"></script>
+</body>
+</html>

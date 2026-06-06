@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore complete game details, minimum system requirements, publisher info, and official links. Find your next digital obsession on GameWorm.">
+    <title>GameWorm | Game Details</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Global Navigation Header -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo-link" id="nav-logo">
+                <i class="fa-solid fa-worm logo-worm"></i> GAMEWORM
+            </a>
+            <nav class="site-nav" id="main-nav">
+                <a href="index.html" class="nav-link" id="link-home">Home</a>
+                <a href="game-details.html?id=540" class="nav-link active" id="link-details">Featured</a>
+                <a href="perks.html" class="nav-link" id="link-perks">Perks</a>
+                <a href="about.html" class="nav-link" id="link-about">About</a>
+                <a href="contact.html" class="nav-link" id="link-contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Details View Wrapper -->
+    <section class="details-wrapper">
+        <div class="container">
+            
+            <!-- Global Loader for details page -->
+            <div id="details-loader" class="loader-container">
+                <div class="loader"></div>
+                <p class="text-muted font-space">Retrieving game record...</p>
+            </div>
+
+            <!-- Main Dynamic Content Container (Hidden initially, shown on load) -->
+            <div id="details-content-container" style="display: none;">
+                
+                <div class="details-grid">
+                    
+                    <!-- Left: Graphic assets and descriptive content -->
+                    <div class="details-main">
+                        <h2 class="details-title-heading" id="game-title">Game Title</h2>
+                        
+                        <!-- Hero Graphics Banner -->
+                        <div class="details-hero">
+                            <img src="" alt="Game Featured Banner" class="details-hero-img" id="hero-img">
+                        </div>
+
+                        <!-- Screenshots Carousel -->
+                        <div class="details-carousel" id="screenshots-container">
+                            <!-- Injected dynamically -->
+                        </div>
+
+                        <!-- Long Description -->
+                        <div class="details-desc-box">
+                            <h3 class="section-title">Overview</h3>
+                            <p class="details-desc-text" id="game-description">Loading description...</p>
+                        </div>
+
+                        <!-- System Performance Metrics Block (Requirements) -->
+                        <div class="details-requirements" id="requirements-block">
+                            <h3 class="section-title">System Requirements</h3>
+                            <div class="requirements-grid" id="requirements-grid-container">
+                                <!-- Injected dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Info Matrix & Outward Hook -->
+                    <div class="details-sidebar">
+                        
+                        <!-- Information Matrix Panel -->
+                        <div class="sidebar-card">
+                            <h3 class="section-title">Specifications</h3>
+                            
+                            <div class="sidebar-row">
+                                <span class="sidebar-label">Genre</span>
+                                <span class="sidebar-val" id="spec-genre">-</span>
+                            </div>
+                            <div class="sidebar-row">
+                                <span class="sidebar-label">Platform</span>
+                                <span class="sidebar-val" id="spec-platform">-</span>
+                            </div>
+                            <div class="sidebar-row">
+                                <span class="sidebar-label">Developer</span>
+                                <span class="sidebar-val" id="spec-developer">-</span>
+                            </div>
+                            <div class="sidebar-row">
+                                <span class="sidebar-label">Publisher</span>
+                                <span class="sidebar-val" id="spec-publisher">-</span>
+                            </div>
+                            <div class="sidebar-row">
+                                <span class="sidebar-label">Release Date</span>
+                                <span class="sidebar-val" id="spec-release">-</span>
+                            </div>
+                            <div class="sidebar-row">
+                                <span class="sidebar-label">Status</span>
+                                <span class="sidebar-val" id="spec-status">Free-to-Play</span>
+                            </div>
+
+                            <!-- Primary Transaction Hook -->
+                            <div class="buy-button-container">
+                                <a href="#" target="_blank" class="btn-buy" id="btn-buy-now">
+                                    BUY NOW <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; margin-left: 0.5rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Safety Back Link -->
+                        <a href="index.html" class="btn-card-action" style="text-align: center; display: block;">
+                            <i class="fa-solid fa-arrow-left"></i> BACK TO CATALOG
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Error container if details load fails -->
+            <div id="details-error-container" class="error-container" style="display: none;">
+                <h3 class="error-title"><i class="fa-solid fa-triangle-exclamation"></i> Error Intercepting Record</h3>
+                <p class="error-msg" id="error-message-text">Failed to query detail API or target is invalid.</p>
+                <a href="index.html" class="btn-card-action"><i class="fa-solid fa-chevron-left"></i> CATALOG HOME</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer-logo">
+                <i class="fa-solid fa-worm logo-worm"></i> GAMEWORM
+            </div>
+            <div class="site-footer-links">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="perks.html" class="footer-link">Perks</a>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+            <p>&copy; 2026 GameWorm Corp. Thin-line neo-brutalist gaming layouts. Powered by FreeToGame.</p>
+        </div>
+    </footer>
+
+    <!-- Details Logic Module -->
+    <script type="module" src="js/details.js"></script>
+</body>
+</html>
