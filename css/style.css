@@ -985,3 +985,81 @@ a {
         flex-direction: column;
     }
 }
+
+/* --- Mobile Menu Toggle Wrapper (Desktop Hidden) --- */
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border: var(--border-sharp);
+    background: var(--bg-surface-elevated);
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-toggle {
+    display: none; /* Keep input entity out of accessible viewport */
+}
+
+/* --- Responsive Layout Breakpoint --- */
+@media (max-width: 768px) {
+    .site-header .container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Expose the burger toggle interaction element */
+    .nav-toggle-label {
+        display: flex;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Transform navigation layout into a vertical drop-down panel */
+    .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-surface-elevated);
+        border-bottom: var(--border-sharp);
+        border-left: var(--border-sharp);
+        border-right: var(--border-sharp);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        z-index: 1000;
+    }
+
+    /* Reformat link boxes to act as wide block touch zones */
+    .nav-link {
+        width: 100%;
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+        box-sizing: border-box;
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link.active::after {
+        display: none; /* Suppress desktop accent lines */
+    }
+
+    .nav-link.active {
+        background: var(--emerald-glow);
+        color: var(--emerald-primary);
+        border-left: 3px solid var(--emerald-primary);
+    }
+
+    /* CSS Toggle Pipeline Logic: When checked, display the navigation block */
+    #nav-toggle:checked ~ .site-nav {
+        display: flex;
+    }
+}
